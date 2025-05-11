@@ -1,1 +1,10 @@
-
+services:
+  - type: web
+    name: my-scraper
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: ./start.sh
+    plan: free
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
